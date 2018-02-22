@@ -23,10 +23,10 @@ summary(Train)
 Train %>% ggvis(~ps_ind_01, ~ps_ind_03, fill = ~target) %>% layer_points()
 
 # Percentual division of `Species`
-round(prop.table(table(iris$Species)) * 100, digits = 1)
+round(prop.table(table(Train)) * 100, digits = 1)
 
 # Division of `Species`
-table(Train$target)
+table(Train$ps_car_03_cat)
 
 table(Train$ps_ind_02_cat[Train$ps_ind_02_cat>(-1)])
 
@@ -52,7 +52,6 @@ str(Train)
 # ps_car_12 (continuous) has only 1 records with missing value. Replace by the mean.
 # ps_car_14 (continuous) has missing values for 7% of all records. Replace by the mean.
 
-#correlation
 Train %>%
   select(-starts_with("ps_calc"), -ps_ind_10_bin, -ps_ind_11_bin, -ps_car_10_cat, -id) %>%
   mutate_at(vars(ends_with("cat")), funs(as.integer)) %>%
@@ -60,3 +59,6 @@ Train %>%
   mutate(target = as.integer(target)) %>%
   cor(use="complete.obs", method = "spearman") %>%
   corrplot(type="lower", tl.col = "black",  diag=FALSE)
+
+
+

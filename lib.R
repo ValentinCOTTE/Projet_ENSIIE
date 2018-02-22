@@ -15,7 +15,7 @@ install.packages("stringr")
 install.packages("forcats")
 install.packages("rlang")
 install.packages("alluvial")
-#install.packages("ggfortify")
+install.packages("ggfortify")
 install.packages("ggrepel")
 install.packages("ggridges")
 install.packages("VIM")
@@ -46,7 +46,7 @@ library('rlang') # data manipulation
 
 # specific visualisation
 library('alluvial') # visualisation
-#library('ggfortify') # visualisation
+library('ggfortify') # visualisation
 library('ggrepel') # visualisation
 library('ggridges') # visualisation
 library('VIM') # NAs
