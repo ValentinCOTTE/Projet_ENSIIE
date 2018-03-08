@@ -8,3 +8,6 @@ train_simple<-rbind.data.frame(train_target1,train_target0)  #on colle ces deux 
 
 rm(train_target0)
 rm(train_target1)
+
+
+test_simple<-test[sample(1:595212, 30000, replace=F),] #on simplifie test aussi
